@@ -11,48 +11,51 @@ import csv
 
 
 # Define variables
-candidates = []
+candidates = ""
+votes = 0
+list_storage = {}
 
-candidate_votes = 0
+winner_votes = 0
+winner_name = ""
 
 # Path to collect data
 election_data = os.path.join("Resources/election_data.csv")
 
-# open and read
+# open and read, split on comma
 with open(election_data, newline="") as file:
     reader = csv.reader(file, delimiter=",")
 
-    # read header 
+    # skip header 
     header = next(file)
 
-    # read thorugh each row after header
-    #print(f"header: {header}") = header: Voter ID,County,Candidate
-    # for row in election_data:
-    #     candidates.append(row[2])
+    for row in election_data:
 
-    # sort by candidate name 
-    organized_list = sorted(candidates)
-    print(organized_list)
+        # Add to vote total
+        votes += 1
 
+        #add candidate name or add to existing
+        candidates = row[2]
+        if candidates in list_storage:
+            list_storage[candidates] += 1
+        else:
+            list_storage[candidates] = 1
 
+# calculating percentage & candidate votes
+percentage = (list_storage[candidates]/votes)*100
 
-    # count votes per candidate
+# determine winner
+if list_storage[candidates] > winner_votes:
+    winner_votes = list_storage[candidates]
+    winner_name = candidates
 
-    # calculate percentage of votes won per candidate
-
-    # calculate total number of votes won per candidate
-
-    # Popular vote winner  
-
-
-# print to terminal 
-results = (["Financial Analysis",
+# print results to terminal 
+results = ("Election Results",
 "----------------------",
-f"Total Months: {len(total_months)}",
-f"Total: {sum(net)}",
-f"Average Change: ${average}",
-f"Greatest Increase in Profits: {best_month} (${greatest_increase})",
-f"Greatest Decrease in Profits: {worst_month} (${lowest_increase})"])
+f"Total Votes: {votes}",
+"----------------------",
+f"{candidates}: {percentage}% ({list_storage[candidates]}", 
+"----------------------",
+f"Winner: {winner_name}")
 
 print(results)
 
