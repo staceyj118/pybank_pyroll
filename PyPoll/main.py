@@ -8,12 +8,12 @@
 # Import dependencies 
 import os
 import csv
-import collections
-from collections import Counter
+
 
 # Define variables
 candidates = []
-candidate_votes = []
+
+candidate_votes = 0
 
 # Path to collect data
 election_data = os.path.join("Resources/election_data.csv")
@@ -27,31 +27,36 @@ with open(election_data, newline="") as file:
 
     # read thorugh each row after header
     #print(f"header: {header}") = header: Voter ID,County,Candidate
-    for row in election_data:
-        candidates.append(row[2])
+    # for row in election_data:
+    #     candidates.append(row[2])
 
-    # sort list by candidates
-    list_sorted = sorted(candidates)
-  
+    # sort by candidate name 
+    organized_list = sorted(candidates)
+    print(organized_list)
+
+
+
     # count votes per candidate
-    candidate_count = Counter(list_sorted)
-    candidate_votes.append(candidate_count.most_common())
-print(f"candidate: {candidate_count}.unique")
+
     # calculate percentage of votes won per candidate
-    for item in candidate_votes
-        first = 
-        second =
-        third =
-        fourth = 
 
     # calculate total number of votes won per candidate
-
 
     # Popular vote winner  
 
 
 # print to terminal 
+results = (["Financial Analysis",
+"----------------------",
+f"Total Months: {len(total_months)}",
+f"Total: {sum(net)}",
+f"Average Change: ${average}",
+f"Greatest Increase in Profits: {best_month} (${greatest_increase})",
+f"Greatest Decrease in Profits: {worst_month} (${lowest_increase})"])
 
+print(results)
 
 # export results to text file
-
+write_results = os.path.join("analysis.txt")
+with open(write_results,'w+') as textfile:
+    textfile.write(str(results))
