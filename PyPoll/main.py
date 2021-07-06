@@ -13,7 +13,7 @@ import csv
 # Define variables
 candidates = ""
 votes = 0
-list_storage = {}
+list_storage = []
 
 winner_votes = 0
 winner_name = ""
@@ -35,6 +35,7 @@ with open(election_data, newline="") as file:
 
         #add candidate name or add to existing
         candidates = row[2]
+
         if candidates in list_storage:
             list_storage[candidates] += 1
         else:
