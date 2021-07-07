@@ -44,12 +44,12 @@ with open(csvpath, newline="") as budgetfile:
     best_month = total_months[best_month_index]
     worst_month = total_months[worst_month_index]
 
-results = ("Financial Analysis\n",
-"---------------------- \n",
-f"Total Months: {len(total_months)}\n",
-f"Total: {sum(net)}\n" ,
-f"Average Change: ${average}\n",
-f"Greatest Increase in Profits: {best_month} (${greatest_increase})\n",
+results = (f"Financial Analysis\n"
+f"---------------------- \n"
+f"Total Months: {len(total_months)}\n"
+f"Total: {sum(net)}\n" 
+f"Average Change: ${average}\n"
+f"Greatest Increase in Profits: {best_month} (${greatest_increase})\n"
 f"Greatest Decrease in Profits: {worst_month} (${lowest_increase})\n")
 
 print(results)

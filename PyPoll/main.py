@@ -50,12 +50,12 @@ if list_storage[candidates] > winner_votes:
     winner_name = candidates
 
 # print results to terminal 
-results = ("Election Results\n",
-"----------------------\n",
-f"Total Votes: {votes}\n",
-"----------------------\n",
-f"{candidates}: {percentage}% ({list_storage[candidates]}\n", 
-"----------------------\n",
+results = ("Election Results\n"
+"----------------------\n"
+f"Total Votes: {votes}\n"
+"----------------------\n"
+f"{candidates}: {percentage}% ({list_storage[candidates]}\n"
+"----------------------\n"
 f"Winner: {winner_name}\n")
 
 print(results)
