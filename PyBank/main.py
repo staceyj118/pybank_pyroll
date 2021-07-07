@@ -12,7 +12,7 @@ with open(csvpath, newline="") as budgetfile:
     greatest_increase = []   
     lowest_increase = []
 
-    month_count = 0
+    month_count = 1
     net_profit = 0
     prior_profit = 0
     current_profit = 0
@@ -34,7 +34,7 @@ with open(csvpath, newline="") as budgetfile:
 
     # net = profit_change
     average = round(sum(net)/(month_count -1),2)
-    print(net)
+    # print(net)
     greatest_increase = max(net)
     lowest_increase = min(net)
 
