@@ -58,13 +58,13 @@ for candidate in winner_dictionary:
 # print(winner_votes)
 
 #print results to terminal 
-results = (f"Election Results\n"
-f"----------------------\n"
-f"Total Votes: {votes}\n"
-f"----------------------\n"
-f"{candidates}: {winner_dictionary[candidate,percentage]}\n"
-f"----------------------\n"
-f"Winner: {winner_name}\n")
+    results = (f"Election Results\n"
+    f"----------------------\n"
+    f"Total Votes: {votes}\n"
+    f"----------------------\n"
+    f"{winner_dictionary}\n"
+    f"----------------------\n"
+    f"Winner: {winner_name}\n")
 
 print(results)
 
