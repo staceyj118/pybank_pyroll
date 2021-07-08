@@ -14,7 +14,7 @@ import csv
 candidates = ""
 votes = 0
 list_storage = []
-
+winner_dictionary = {}
 winner_votes = 0
 winner_name = ""
 
@@ -22,13 +22,13 @@ winner_name = ""
 election_data = os.path.join("Resources/election_data.csv")
 
 # open and read, split on comma
-with open(election_data, newline="") as file:
-    reader = csv.reader(file, delimiter=",")
+with open(election_data) as file:
+    reader = csv.reader(file)
 
     # skip header 
-    header = next(file)
+    header = next(reader)
 
-    for row in election_data:
+    for row in reader:
 
         # Add to vote total
         votes += 1
@@ -36,26 +36,34 @@ with open(election_data, newline="") as file:
         #add candidate name or add to existing
         candidates = row[2]
 
-        if candidates in list_storage:
-            list_storage[candidates] += 1
-        else:
-            list_storage[candidates] = 1
-
-# calculating percentage & candidate votes
-percentage = (list_storage[candidates]/votes)*100
+        if candidates not in list_storage:
+            list_storage.append(candidates)
+            winner_dictionary[candidates] = 0
+        winner_dictionary[candidates] += 1
+# print(winner_dictionary)
+# print(votes)
 
 # determine winner
-if list_storage[candidates] > winner_votes:
-    winner_votes = list_storage[candidates]
-    winner_name = candidates
+# if list_storage[candidates] > winner_votes:
+#     winner_votes = list_storage[candidates]
+#     winner_name = candidates
 
-# print results to terminal 
-results = ("Election Results\n"
-"----------------------\n"
+for candidate in winner_dictionary:
+    vote = winner_dictionary.get(candidate)
+    percentage = float(vote)/votes
+    if vote > winner_votes: 
+        winner_votes = vote
+        winner_name = candidate
+# print(winner_name)
+# print(winner_votes)
+
+#print results to terminal 
+results = (f"Election Results\n"
+f"----------------------\n"
 f"Total Votes: {votes}\n"
-"----------------------\n"
-f"{candidates}: {percentage}% ({list_storage[candidates]}\n"
-"----------------------\n"
+f"----------------------\n"
+f"{candidates}: {winner_dictionary[candidate,percentage]}\n"
+f"----------------------\n"
 f"Winner: {winner_name}\n")
 
 print(results)
