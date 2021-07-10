@@ -47,34 +47,36 @@ with open(election_data) as file:
 # if list_storage[candidates] > winner_votes:
 #     winner_votes = list_storage[candidates]
 #     winner_name = candidates
+write_results = os.path.join("analysis.txt")
+with open(write_results,'w+') as textfile:
 
-for candidate in winner_dictionary:
-    vote = winner_dictionary.get(candidate)
-    if vote > winner_votes: 
-        winner_votes = vote
-        winner_name = candidate
-    percentage = float(vote)/votes
-    # key=candidate
-    # value=vote
-    percent = "{:.2%}".format(percentage)
-# for key, value in winner_dictionary.items ():
-#     candidate_list = (key, ":", value, percent)
-    #print(candidate_list)
-# print(winner_name)
-# print(winner_votes)
-
-#print results to terminal 
+    x = []
+    for candidate in winner_dictionary:
+        vote = winner_dictionary.get(candidate)
+        if vote > winner_votes: 
+            winner_votes = vote
+            winner_name = candidate
+        percentage = float(vote)/votes
+        percent = "{:.2%}".format(percentage)
+        candidate_list = f"{candidate}: {vote} {percent}"
+        x.append(candidate_list)
+    # textfile.write(f"Candidate Results:" {candidate_list})
+        # for key, value in winner_dictionary.items ():
+    # print(winner_name)
+    # print(winner_votes)
+    #print(x)
+    #print results to terminal 
     results = (f"Election Results\n"
     f"----------------------\n"
     f"Total Votes: {votes}\n"
     f"----------------------\n"
-    f"{candidate} : {vote} ({percent})\n"
+    f"{x[0]}\n"
+    f"{x[1]}\n"
+    f"{x[2]}\n"
+    f"{x[3]}\n"
     f"----------------------\n"
     f"Winner: {winner_name}\n")
 
     print(results)
-
-#export results to text file
-write_results = os.path.join("analysis.txt")
-with open(write_results,'w+') as textfile:
     textfile.write(str(results))
+    #export results to text file
