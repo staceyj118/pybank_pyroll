@@ -45,4 +45,6 @@ Key points needed:
 
   * The winner of the election based on popular vote.
 
-### Results: 
+### Results:
+
+![](https://github.com/staceyj118/python-challenge/blob/main/Images/Vote%20Summary.PNG?raw=true) 
