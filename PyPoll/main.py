@@ -50,10 +50,16 @@ with open(election_data) as file:
 
 for candidate in winner_dictionary:
     vote = winner_dictionary.get(candidate)
-    percentage = float(vote)/votes
     if vote > winner_votes: 
         winner_votes = vote
         winner_name = candidate
+    percentage = float(vote)/votes
+    # key=candidate
+    # value=vote
+    percent = "{:.2%}".format(percentage)
+# for key, value in winner_dictionary.items ():
+#     candidate_list = (key, ":", value, percent)
+    #print(candidate_list)
 # print(winner_name)
 # print(winner_votes)
 
@@ -62,13 +68,13 @@ for candidate in winner_dictionary:
     f"----------------------\n"
     f"Total Votes: {votes}\n"
     f"----------------------\n"
-    f"{winner_dictionary}\n"
+    f"{candidate} : {vote} ({percent})\n"
     f"----------------------\n"
     f"Winner: {winner_name}\n")
 
-print(results)
+    print(results)
 
-# export results to text file
+#export results to text file
 write_results = os.path.join("analysis.txt")
 with open(write_results,'w+') as textfile:
     textfile.write(str(results))
