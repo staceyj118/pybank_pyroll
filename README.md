@@ -1,14 +1,10 @@
 # python
 
-## Background 
-
-Complete two python challenges to encompass real-world situation. 
-
 ## #1: PyBank
 
 Creation of python script to analyze records and print results to analysis text file. 
 
-![](https://github.com/staceyj118/python/blob/main/Images/revenue-per-lead.png?raw=true)
+![](https://github.com/staceyj118/pybank_pyroll/blob/main/Images/revenue-per-lead.png?raw=true)
 
 Key points: 
 
@@ -24,14 +20,14 @@ Key points:
 
 ### Results: 
 
-![](https://github.com/staceyj118/python/blob/main/Images/Financial%20Analysis.PNG?raw=true)
+![](https://github.com/staceyj118/pybank_pyroll/blob/main/Images/Financial%20Analysis.PNG?raw=true)
 
 
 ## #2: PyPoll
 
 Assisting a small, rural town in its modernization of vote counting. Results printed and exported to text file. 
 
-![](https://github.com/staceyj118/python/blob/main/Images/Vote_counting.png?raw=true)
+![](https://github.com/staceyj118/pybank_pyroll/blob/main/Images/Vote_counting.png?raw=true)
 
 Key points needed: 
 
@@ -47,4 +43,4 @@ Key points needed:
 
 ### Results:
 
-![](https://github.com/staceyj118/python/blob/main/Images/Vote%20Summary.PNG?raw=true) 
+![](https://github.com/staceyj118/pybank_pyroll/blob/main/Images/Vote%20Summary.PNG?raw=true) 
